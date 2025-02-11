@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Page - DiamondRecovery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .personal-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .info-item {
+            width: 45%;
+            margin-bottom: 15px;
+        }
+        .info-item label {
+            font-weight: bold;
+            display: block;
+        }
+        .info-item p, .info-item input {
+            margin: 5px 0;
+        }
+        .info-item input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .edit-btn {
+            background-color: #28a745;
+        }
+        .save-btn {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="create-account.html">Create Account</a>
+    <a href="personal.html">Personal</a>
+    <a href="throwing.html">Throwing</a>
+    <a href="pt-script.html">PT Script</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="rpe.html">RPE</a>
+    <a href="video.html">Video</a>
+</div>
+
+<header>
+    DiamondRecovery - Personal Page
+</header>
+
+<div class="container">
+    <h2>Personal Information</h2>
+    <div class="personal-info">
+        <!-- Height -->
+        <div class="info-item">
+            <label for="height">Height:</label>
+            <p id="height-text">5'9" (175 cm)</p>
+            <input type="text" id="height" value="5'9" (175 cm)" style="display: none;">
+        </div>
+
+        <!-- Weight -->
+        <div class="info-item">
+            <label for="weight">Weight:</label>
+            <p id="weight-text">160 lbs (72.5 kg)</p>
+            <input type="text" id="weight" value="160 lbs (72.5 kg)" style="display: none;">
+        </div>
+
+        <!-- Age -->
+        <div class="info-item">
+            <label for="age">Age:</label>
+            <p id="age-text">28</p>
+            <input type="text" id="age" value="28" style="display: none;">
+        </div>
+
+        <!-- Injury -->
+        <div class="info-item">
+            <label for="injury">Injury:</label>
+            <p id="injury-text">Knee Surgery - ACL Reconstruction</p>
+            <input type="text" id="injury" value="Knee Surgery - ACL Reconstruction" style="display: none;">
+        </div>
+
+        <!-- Rehabilitation Progress -->
+        <div class="info-item">
+            <label for="progress">Rehabilitation Progress:</label>
+            <p id="progress-text">Currently in Phase 2 of recovery, working on strengthening exercises.</p>
+            <input type="text" id="progress" value="Currently in Phase 2 of recovery, working on strengthening exercises." style="display: none;">
+        </div>
+
+        <!-- Preferred Treatment -->
+        <div class="info-item">
+            <label for="treatment">Preferred Treatment:</label>
+            <p id="treatment-text">Physical Therapy and Cryotherapy</p>
+            <input type="text" id="treatment" value="Physical Therapy and Cryotherapy" style="display: none;">
+        </div>
+
+        <!-- Contact Info -->
+        <div class="info-item">
+            <label for="contact">Contact Info:</label>
+            <p id="contact-text">email@example.com</p>
+            <input type="text" id="contact" value="email@example.com" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Buttons to Edit or Save -->
+    <button id="editBtn" class="btn edit-btn">Edit Information</button>
+    <button id="saveBtn" class="btn save-btn" style="display: none;">Save Information</button>
+</div>
+
+<script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
+    const heightText = document.getElementById('height-text');
+    const heightInput = document.getElementById('height');
+    const weightText = document.getElementById('weight-text');
+    const weightInput = document.getElementById('weight');
+    const ageText = document.getElementById('age-text');
+    const ageInput = document.getElementById('age');
+    const injuryText = document.getElementById('injury-text');
+    const injuryInput = document.getElementById('injury');
+    const progressText = document.getElementById('progress-text');
+    const progressInput = document.getElementById('progress');
+    const treatmentText = document.getElementById('treatment-text');
+    const treatmentInput = document.getElementById('treatment');
+    const contactText = document.getElementById('contact-text');
+    const contactInput = document.getElementById('contact');
+
+    editBtn.addEventListener('click', function() {
+        // Show input fields and hide text
+        heightText.style.display = 'none';
+        heightInput.style.display = 'block';
+
+        weightText.style.display = 'none';
+        weightInput.style.display = 'block';
+
+        ageText.style.display = 'none';
+        ageInput.style.display = 'block';
+
+        injuryText.style.display = 'none';
+        injuryInput.style.display = 'block';
+
+        progressText.style.display = 'none';
+        progressInput.style.display = 'block';
+
+        treatmentText.style.display = 'none';
+        treatmentInput.style.display = 'block';
+
+        contactText.style.display = 'none';
+        contactInput.style.display = 'block';
+
+        // Show Save button and hide Edit button
+        saveBtn.style.display = 'inline-block';
+        editBtn.style.display = 'none';
+    });
+
+    saveBtn.addEventListener('click', function() {
+        // Save the changes and display the text again
+        heightText.innerHTML = heightInput.value;
+        weightText.innerHTML = weightInput.value;
+        ageText.innerHTML = ageInput.value;
+        injuryText.innerHTML = injuryInput.value;
+        progressText.innerHTML = progressInput.value;
+        treatmentText.innerHTML = treatmentInput.value;
+        contactText.innerHTML = contactInput.value;
+
+        // Hide input fields and show text
+        heightText.style.display = 'block';
+        heightInput.style.display = 'none';
+
+        weightText.style.display = 'block';
+        weightInput.style.display = 'none';
+
+        ageText.style.display = 'block';
+        ageInput.style.display = 'none';
+
+        injuryText.style.display = 'block';
+        injuryInput.style.display = 'none';
+
+        progressText.style.display = 'block';
+        progressInput.style.display = 'none';
+
+        treatmentText.style.display = 'block';
+        treatmentInput.style.display = 'none';
+
+        contactText.style.display = 'block';
+        contactInput.style.display = 'none';
+
+        // Show Edit button and hide Save button
+        saveBtn.style.display = 'none';
+        editBtn.style.display = 'inline-block';
+    });
+</script>
+
+</body>
+</html>
