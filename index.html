@@ -4,155 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account - DiamondRecovery</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f5;
             margin: 0;
             padding: 0;
+            color: #333;
         }
-        /* Navigation Bar Styling */
-        nav {
-            background-color: #333;
-            overflow: hidden;
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #2d5a80;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
+        .navbar a {
+            color: #fff;
             padding: 14px 20px;
             text-decoration: none;
-            font-size: 16px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
         }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
+        .navbar a:hover {
+            background-color: #1e425e;
         }
-        nav a.active {
-            background-color: #007bff;
-            color: white;
-        }
-        /* Company Name Styling */
-        .company-name {
-            text-align: center;
-            font-size: 36px;
-            color: #007bff;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        /* Container Styling */
-        .container {
-            background: white;
+        .main-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
+            background-color: #1e425e;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .container h2 {
+        .logo {
+            position: absolute;
+            left: 20px;
+            max-width: 60px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             text-align: center;
         }
         .form-group {
+            text-align: left;
             margin-bottom: 15px;
         }
         .form-group label {
-            display: block;
+            font-weight: bold;
         }
         .form-group input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
         .btn {
-            width: 100%;
-            background: #007bff;
+            background: #2d5a80;
             color: white;
-            padding: 10px;
             border: none;
+            padding: 12px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            width: 100%;
         }
         .btn:hover {
-            background: #0056b3;
-        }
-        /* Role Selection Styling */
-        .role-selection {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            margin-top: 10px;
-            font-weight: bolder;
+            background: #1e425e;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#" class="active">Create Account</a>
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
         <a href="personal.html">Personal</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Throwing</a>
-        <a href="#">PT Script</a>
-        <a href="#">Calendar</a>
-        <a href="#">RPE</a>
-        <a href="#">Video</a>
+        <a href="throwing.html">Throwing</a>
+        <a href="pt-script.html">PT Script</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="rpe.html">RPE</a>
+        <a href="video.html">Video</a>
     </nav>
-
-    <!-- Company Name -->
-    <div class="company-name">DiamondRecovery</div>
-
-    <!-- Form Container -->
-    <div class="container">
-        <h2>Create an Account</h2>
-        <form id="createAccountForm">
-            <!-- Role Selection First -->
+    
+    <header class="main-header">
+        <img src="DRLogo.webp" alt="DiamondRecovery Logo" class="logo">
+        <h1>Create Account</h1>
+    </header>
+    
+    <section class="container">
+        <h2>Sign Up</h2>
+        <p>Create your account to start tracking your recovery journey.</p>
+        <form>
             <div class="form-group">
-                <label for="role">Select Your Role: </label>
-                <div class="role-selection">
-                    <label>
-                        <input type="radio" name="role" value="Doctor/PT" required> Doctor/PT
-                    </label>
-                    <label>
-                        <input type="radio" name="role" value="Athlete/Patient" required> Athlete/Patient
-                    </label>
-                </div>
-            </div>
-
-            <!-- Full Name -->
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" required>
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" required>
-            </div>
-            <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" required>
             </div>
             <div class="form-group">
-                <label for="confirmPassword">Re-enter Password</label>
-                <input type="password" id="confirmPassword" required>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" required>
             </div>
-
             <button type="submit" class="btn">Create Account</button>
         </form>
-    </div>
-    
-    <script>
-        document.getElementById('createAccountForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Account created successfully!');
-        });
-    </script>
+    </section>
 </body>
 </html>
