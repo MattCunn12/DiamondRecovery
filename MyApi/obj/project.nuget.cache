@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QqLDpSTWyrI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\30sam\\OneDrive\\Desktop\\DiamondRecovery\\MyApi\\MyApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\30sam\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.6\\microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
+    "C:\\Users\\30sam\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
